@@ -4,14 +4,27 @@ String printedbullet;
 I_AbsCannon laserCannon;
 I_AbsCannon fireCannon;
 I_AbsCannon bulletCannon;
+I_AbsCannon testCannon;
 boolean clicked;
 
 
 void setup() 
 {
-  size(640, 360); 
-  
+  size(640, 360);   
   CannonsCreator cannonsCreator = new CannonsCreator();
+  
+  //test modulu "cannonsCreator.create"
+  testCannon = cannonsCreator.create(e_CannonType.LASER_C);
+  printArray(testCannon);
+  if(testCannon == null)
+  {
+    exit();
+  }
+  
+  //koniec testu
+  
+  
+  
   laserCannon = cannonsCreator.create(e_CannonType.LASER_C);
   fireCannon = cannonsCreator.create(e_CannonType.FIRE_C);
   bulletCannon = cannonsCreator.create(e_CannonType.BULLET_C);
